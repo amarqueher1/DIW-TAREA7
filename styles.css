@@ -34,7 +34,7 @@
   --transition-normal: 0.3s ease;
 }
 
-/* Reset y estilos base */
+/* Se eliminan márgenes y rellenos por defecto, y se establece el box-sizing para todos los elementos */
 * {
   margin: 0;
   padding: 0;
@@ -43,7 +43,7 @@
 
 html {
   font-size: var(--font-size-base);
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en enlaces de anclaje */
 }
 
 body {
@@ -53,6 +53,7 @@ body {
   background-color: var(--color-blanco);
 }
 
+/* Estilos para encabezados h1, h2 y h3 con márgenes, ancho de fuente y alineación */
 h1, h2, h3 {
   margin-bottom: var(--margen-sm);
   font-weight: 700;
@@ -63,6 +64,7 @@ h1 {
   font-size: var(--font-size-xlarge);
 }
 
+/* Estilo para encabezados h2 con tamaño de fuente grande y centrado */
 h2 {
   font-size: var(--font-size-large);
   margin-bottom: var(--margen-md);
@@ -73,20 +75,24 @@ p {
   margin-bottom: var(--margen-sm);
 }
 
+/* Se aplican estilos a los enlaces: color primario, sin subrayado y transición al pasar el cursor */
 a {
   color: var(--color-primary);
   text-decoration: none;
   transition: color var(--transicion-rapida);
 }
 
+/* Al pasar el cursor sobre los enlaces, cambian a color primario hover */
 a:hover {
   color: var(--color-primary-hover);
 }
 
+/* Estilo para listas no ordenadas: se eliminan los puntos de viñeta */
 ul {
   list-style-type: none;
 }
 
+/* Contenedor principal que centra el contenido, limita el ancho y añade padding */
 .container {
   width: 90%;
   max-width: 75rem;
@@ -94,6 +100,7 @@ ul {
   padding: var(--margen-sm);
 }
 
+/* Botón base con padding, borde redondeado, sin borde, fuente personalizada y transición */
 .boton {
   display: inline-block;
   padding: var(--margen-xs) var(--margen-md);
@@ -106,11 +113,13 @@ ul {
   font-family: var(--font-family);
 }
 
+/* Botón con fondo color primario y texto blanco */
 .boton-primary {
   background-color: var(--color-primary);
   color: white;
 }
 
+/* Al pasar el cursor, el botón primario cambia de color, sube ligeramente y proyecta sombra */
 .boton-primary:hover {
   background-color: var(--color-primary-hover);
   color: white;
@@ -118,11 +127,13 @@ ul {
   box-shadow: var(--sombra-base);
 }
 
+/* Botón con fondo color secundario y texto blanco */
 .boton-secondary {
   background-color: var(--color-secondary);
   color: white;
 }
 
+/* Al pasar el cursor, el botón secundario cambia de color, sube ligeramente y proyecta sombra */
 .boton-secondary:hover {
   background-color: var(--color-secondary-hover);
   color: white;
@@ -130,6 +141,7 @@ ul {
   box-shadow: var(--sombra-base);
 }
 
+/* Cabecera fija en la parte superior, con sombra, fondo blanco y padding vertical */
 .header {
   background-color: white;
   box-shadow: var(--sombra-base);
@@ -139,28 +151,33 @@ ul {
   padding: var(--margen-sm) 0;
 }
 
+/* Contenedor del header centrado verticalmente en columna */
 .header .container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Contenedor del logo, alineado al centro y con margen inferior */
 .logo {
   display: flex;
   align-items: center;
   margin-bottom: var(--margen-sm);
 }
 
+/* Título del logo sin margen inferior, con margen izquierdo y color primario */
 .logo h1 {
   margin-bottom: 0;
   margin-left: var(--margen-xs);
   color: var(--color-primary);
 }
 
+/* Color primario aplicado al SVG del logo */
 .logo svg {
   fill: var(--color-primary);
 }
 
+/* Menú de navegación en fila, centrado, adaptable y con espacio entre enlaces */
 .nav ul {
   display: flex;
   flex-wrap: wrap;
@@ -168,11 +185,13 @@ ul {
   gap: var(--margen-sm);
 }
 
+/* Enlaces del menú con padding y fuente en negrita */
 .nav a {
   padding: var(--margen-xs);
   font-weight: 600;
 }
 
+/* Sección de inicio con fondo secundario, texto blanco, gran padding y texto centrado */
 .inicio {
   background: var(--color-secondary);
   color: white;
@@ -180,42 +199,50 @@ ul {
   text-align: center;
 }
 
+/* Título grande y centrado con margen inferior medio */
 .inicio h2 {
   font-size: var(--font-size-xlarge);
   margin-bottom: var(--margen-md);
 }
 
+/* Párrafo con tamaño de fuente medio y margen inferior grande */
 .inicio p {
   font-size: var(--font-size-medium);
   margin-bottom: var(--margen-lg);
 }
 
+/* Sección "Sobre Nosotros" con padding vertical y fondo blanco */
 section.sobre-nosotros {
   padding: var(--margen-lg) 0;
   background-color: white;
 }
 
+/* Lista dentro de la sección "Sobre Nosotros" con sangría y viñetas */
 .sobre-nosotros__texto ul {
   margin-left: var(--margen-md);
   list-style-type: disc;
 }
 
+/* Sección "Mascotas" con espaciado vertical */
 section.mascotas {
   padding: var(--margen-lg) 0;
 }
 
+/* Galería en formato grid de una sola columna con separación entre elementos */
 .galeria {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--margen-lg);
 }
 
+/* Galería en dos columnas a partir de 768px de ancho */
 @media (min-width: 768px) {
   .galeria {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* Tarjeta de mascota con fondo blanco, esquinas redondeadas, sombra y transición */
 .tarjeta-mascota {
   background-color: white;
   border-radius: var(--borde-redondeado-lg);
@@ -224,20 +251,24 @@ section.mascotas {
   transition: transform var(--transition-normal);
 }
 
+/* Contenedor de imagen con fondo gris claro, padding y altura definida */
 .tarjeta-mascota__imagen {
   background-color: var(--color-blanco-oscuro);
   padding: var(--margen-md);
   height: 60%;
 }
 
+/* Imagen SVG que ocupa el 100% de la altura del contenedor */
 .tarjeta-mascota__imagen svg {
   height: 100%;
 }
 
+/* Contenedor de texto de la tarjeta con padding interno */
 .tarjeta-mascota__info {
   padding: var(--margen-md);
 }
 
+/* Sección de llamada a la acción con fondo secundario, texto blanco y gran padding */
 .seccion-llamada {
   background: var(--color-secondary);
   color: white;
@@ -245,6 +276,7 @@ section.mascotas {
   text-align: center;
 }
 
+/* Pie de página con fondo primario, texto blanco, padding y texto centrado */
 .footer {
   background-color: var(--color-primary);
   color: white;
@@ -254,6 +286,8 @@ section.mascotas {
 
 
 /* ANIMACIONES */
+
+/* SVG de cola animado: se dibuja, se rellena y se mueve constantemente */
 .cola {
   stroke-dasharray: 300;
   stroke-dashoffset: 300;
@@ -285,6 +319,7 @@ section.mascotas {
   }
 }
 
+/* Ojos animados: se agrandan y giran suavemente */
 .ojos {
   animation: agrandarYGirar 1s ease-in-out infinite alternate;
   transform-origin: center;
